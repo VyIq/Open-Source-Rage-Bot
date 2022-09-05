@@ -1,10 +1,10 @@
 ~ Premium Commands ~
-- “Admins” lists admins
-- “Activity” lists lurker activity
-- “Talkers” lists talker activity
-- “Usage” lists commands
-- “Wisdom” random wisdom
-- “List” lists substitutions 
+- “Set name” Sets name 
+- “Set picture” Sets profile picture
+- “Set background” Sets background picture
+- “Groups” lists groups the bot is in
+- “Leave” leaves selected group
+- “Transfer” transfer settings to other groups
 - “Trigger -> Response” when someone says Trigger, Ragebot will answer with Response (substitutions)
 - “Delete Trigger” removes the substitution
 - “Rules” lists the rules
