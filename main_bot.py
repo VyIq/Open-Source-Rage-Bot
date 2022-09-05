@@ -47,10 +47,14 @@ class RageBot(KikClientCallback):
     def on_chat_message_received(self, chat_message: chatting.IncomingChatMessage):
         print("[+] '{}' says: {}".format(chat_message.from_jid, chat_message.body))
 
-        if chat_message.body.lower() == 'help':
+        if chat_message.body.lower() == 'usage':
             with open("usage.txt", "r") as f:
             usage = f.read()
             self.client.send_chat_message(chat_message.from_jid, usage)
+
+        elif chat_message.body.lower() == 'friend':
+            self.client.friend_attribution
+            self.client.send_chat_message(chat_message.from_jid, "I'll be your friend! You can now add me to groups.")
 
         else:
             self.client.send_chat_message(chat_message.from_jid, "Say usage for help, say friend to add me to your chat")
