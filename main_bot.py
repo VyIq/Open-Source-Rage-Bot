@@ -52,7 +52,7 @@ class RageBot(KikClientCallback):
                                           'The following are the commands and they only work in dms;\n- command 1\n- command 2')
  
         else:
-            self.client.send_chat_message(chat_message.from_jid, "Hello, say 'help' for contact info or 'ping' to check if the bot is online.")
+            self.client.send_chat_message(chat_message.from_jid, "Say usage for help, say friend to add me to your chat")
 
     def on_roster_received(self, response: FetchRosterResponse):
         print("[+] Chat partners:\n" + '\n'.join([str(member) for member in response.peers]))
