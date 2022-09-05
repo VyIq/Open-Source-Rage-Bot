@@ -48,9 +48,10 @@ class RageBot(KikClientCallback):
         print("[+] '{}' says: {}".format(chat_message.from_jid, chat_message.body))
 
         if chat_message.body.lower() == 'help':
-            self.client.send_chat_message(chat_message.from_jid,
-                                          'The following are the commands and they only work in dms;\n- command 1\n- command 2')
- 
+            with open("usage.txt", "r") as f:
+            usage = f.read()
+            self.client.send_chat_message(chat_message.from_jid, usage)
+
         else:
             self.client.send_chat_message(chat_message.from_jid, "Say usage for help, say friend to add me to your chat")
 
