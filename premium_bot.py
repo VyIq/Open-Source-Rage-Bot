@@ -49,12 +49,17 @@ class RageBot(KikClientCallback):
 
         if chat_message.body.lower() == 'usage':
             with open("usage.txt", "r") as f:
-            usage = f.read()
-            self.client.send_chat_message(chat_message.from_jid, usage)
+                usage = f.read()
+                self.client.send_chat_message(chat_message.from_jid, usage)
 
         elif chat_message.body.lower() == 'friend':
             self.client.friend_attribution
             self.client.send_chat_message(chat_message.from_jid, "I'll be your friend! You can now add me to groups.")
+
+        elif chat_message.body.lower() == 'premium usage':
+            with open("premium_commands.txt", "r") as f:
+                premium_usage = f.read()
+                self.client.send_chat_message(chat_message.from_jid, premium_usage)
 
         else:
             self.client.send_chat_message(chat_message.from_jid, "Say usage for help, say friend to add me to your chat")
