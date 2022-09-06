@@ -47,6 +47,8 @@ class RageBot(KikClientCallback):
     def on_chat_message_received(self, chat_message: chatting.IncomingChatMessage):
         print("[+] '{}' says: {}".format(chat_message.from_jid, chat_message.body))
 
+        default_dm = "This only works in group chats, say usage for help"
+
         if chat_message.body.lower() == 'usage' or 'commands':
             with open("usage.txt", "r") as f:
                 usage = f.read()
@@ -64,14 +66,19 @@ class RageBot(KikClientCallback):
         elif chat_message.body.lower() == 'wisdom':
 
         elif chat_message.body.lower() == 'list':
+            self.client.send_chat_message(chat_message.from_jid, default_dm)
 
         elif chat_message.body.lower() == 'talkers':
+            self.client.send_chat_message(chat_message.from_jid, default_dm)
 
         elif chat_message.body.lower() == 'trigger -> response':
+            self.client.send_chat_message(chat_message.from_jid, default_dm)
 
         elif chat_message.body.lower() == 'trigger ~> response':
+            self.client.send_chat_message(chat_message.from_jid, default_dm)
 
         elif chat_message.body.lower().startswith('delete'):
+            self.client.send_chat_message(chat_message.from_jid, default_dm)
 
         elif 'rules' in chat_message.body.lower()
             some custom text
