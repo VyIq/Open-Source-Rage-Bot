@@ -62,6 +62,7 @@ class RageBot(KikClientCallback):
                 self.client.send_chat_message(chat_message.from_jid, f.read())
 
         elif chat_message.body.lower() == 'wisdom':
+            self.client.send_chat_message(chat_message.from_jid, "blank")
 
         elif chat_message.body.lower() == 'list':
             self.client.send_chat_message(chat_message.from_jid, default_dm)
@@ -82,11 +83,11 @@ class RageBot(KikClientCallback):
             with open("rules.txt", "r") as f:
                 self.client.send_chat_message(chat_message.from_jid, f.read())
 
-        elif chat_message.body.lower() == 'donate':
-            self.client.send_chat_message(chat_message.from_jid, )
+        #  elif chat_message.body.lower() == 'donate':
+            #  self.client.send_chat_message(chat_message.from_jid, "blank")
 
-        elif chat_message.body.lower() == 'donators':
-            self.client.send_chat_message(chat_message.from_jid, )
+        #  elif chat_message.body.lower() == 'donators':
+            #  self.client.send_chat_message(chat_message.from_jid, "blank")
 
         elif '48 mode' in chat_message.body.lower():
             with open("48_mode.txt", "r") as f:
