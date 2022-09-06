@@ -51,8 +51,7 @@ class RageBot(KikClientCallback):
 
         if chat_message.body.lower() == 'usage' or 'commands':
             with open("usage.txt", "r") as f:
-                usage = f.read()
-                self.client.send_chat_message(chat_message.from_jid, usage)
+                self.client.send_chat_message(chat_message.from_jid, f.read())
 
         elif chat_message.body.lower() == 'friend':
             self.client.friend_attribution
@@ -60,8 +59,7 @@ class RageBot(KikClientCallback):
 
         elif chat_message.body.lower() == 'premium usage':
             with open("premium_commands.txt", "r") as f:
-                premium_usage = f.read()
-                self.client.send_chat_message(chat_message.from_jid, premium_usage)
+                self.client.send_chat_message(chat_message.from_jid, f.read())
 
         elif chat_message.body.lower() == 'wisdom':
 
@@ -81,16 +79,18 @@ class RageBot(KikClientCallback):
             self.client.send_chat_message(chat_message.from_jid, default_dm)
 
         elif 'rules' in chat_message.body.lower()
-            some custom text
+            with open("rules.txt", "r") as f:
+                self.client.send_chat_message(chat_message.from_jid, f.read())
 
         elif chat_message.body.lower() == 'donate':
-            Some custom text
+            self.client.send_chat_message(chat_message.from_jid, )
 
         elif chat_message.body.lower() == 'donators':
-            Some custom text
+            self.client.send_chat_message(chat_message.from_jid, )
 
         elif '48 mode' in chat_message.body.lower():
-            Some custom text
+            with open("48_mode.txt", "r") as f:
+                self.client.send_chat_message(chat_message.from_jid, f.read())
 
         else:
             self.client.send_chat_message(chat_message.from_jid, "Say usage for help, say friend to add me to your chat")
