@@ -79,10 +79,11 @@ class RageBot(KikClientCallback):
         elif chat_message.body.lower() == 'donate':
             Some custom text
 
-        elif '48 mode' in chat_message.body.lower() == 'donators':
+        elif chat_message.body.lower() == 'donators':
             Some custom text
 
-        elif chat_message.body.lower() == 'wisdom':
+        elif '48 mode' in chat_message.body.lower():
+            Some custom text
 
         else:
             self.client.send_chat_message(chat_message.from_jid, "Say usage for help, say friend to add me to your chat")
