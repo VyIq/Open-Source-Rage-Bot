@@ -47,7 +47,7 @@ class RageBot(KikClientCallback):
     def on_chat_message_received(self, chat_message: chatting.IncomingChatMessage):
         print("[+] '{}' says: {}".format(chat_message.from_jid, chat_message.body))
 
-        if chat_message.body.lower() == 'usage':
+        if chat_message.body.lower() == 'usage' or 'commands':
             with open("usage.txt", "r") as f:
                 usage = f.read()
                 self.client.send_chat_message(chat_message.from_jid, usage)
@@ -60,6 +60,29 @@ class RageBot(KikClientCallback):
             with open("premium_commands.txt", "r") as f:
                 premium_usage = f.read()
                 self.client.send_chat_message(chat_message.from_jid, premium_usage)
+
+        elif chat_message.body.lower() == 'wisdom':
+
+        elif chat_message.body.lower() == 'list':
+
+        elif chat_message.body.lower() == 'talkers':
+
+        elif chat_message.body.lower() == 'trigger -> response':
+
+        elif chat_message.body.lower() == 'trigger ~> response':
+
+        elif chat_message.body.lower().startswith('delete'):
+
+        elif 'rules' in chat_message.body.lower()
+            some custom text
+
+        elif chat_message.body.lower() == 'donate':
+            Some custom text
+
+        elif '48 mode' in chat_message.body.lower() == 'donators':
+            Some custom text
+
+        elif chat_message.body.lower() == 'wisdom':
 
         else:
             self.client.send_chat_message(chat_message.from_jid, "Say usage for help, say friend to add me to your chat")
