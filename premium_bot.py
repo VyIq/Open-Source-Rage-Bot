@@ -96,6 +96,20 @@ class RageBot(KikClientCallback):
         else:
             self.client.send_chat_message(chat_message.from_jid, "Say usage for help, say friend to add me to your chat")
 
+    def on_group_message_received(self, chat_message: chatting.IncomingGroupChatMessage):
+        if str(chat_message.raw_element).count("</alias-sender>") > 1 and "</alias-sender>" not in str(chat_message.body):
+        print("[+] '{}' from group ID {} says: {}".format(chat_message.from_jid, chat_message.group_jid, chat_message.body))
+
+        if chat_message.body.lower() == 'admins':
+
+        elif chat_message.body.lower() == 'activity':
+
+        elif chat_message.body.lower() == 'talkers':
+
+        elif chat_message.body.lower() == 'usage':
+             with open("usage.txt", "r") as f:
+                 self.client.send_chat_message(chat_message.group_jid, f.read())
+
     def on_roster_received(self, response: FetchRosterResponse):
         print("[+] Chat partners:\n" + '\n'.join([str(member) for member in response.peers]))
 
