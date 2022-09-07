@@ -52,7 +52,7 @@ class RageBot(KikClientCallback):
         default_dm = "This only works in group chats, say usage for help"
 
         if chat_message.body.lower() == 'usage' or 'commands':
-            with open("usage.txt", "r") as f:
+            with open("txt_files/usage.txt", "r") as f:
                 self.client.send_chat_message(chat_message.from_jid, f.read())
 
         elif chat_message.body.lower() == 'friend':
@@ -60,7 +60,7 @@ class RageBot(KikClientCallback):
             self.client.send_chat_message(chat_message.from_jid, "I'll be your friend! You can now add me to groups.")
 
         elif chat_message.body.lower() == 'premium usage':
-            with open("premium_commands.txt", "r") as f:
+            with open("txt_files/premium_commands.txt", "r") as f:
                 self.client.send_chat_message(chat_message.from_jid, f.read())
 
         elif chat_message.body.lower() == 'wisdom':
@@ -82,7 +82,7 @@ class RageBot(KikClientCallback):
             self.client.send_chat_message(chat_message.from_jid, default_dm)
 
         elif 'rules' in chat_message.body.lower()
-            with open("rules.txt", "r") as f:
+            with open("txt_files/rules.txt", "r") as f:
                 self.client.send_chat_message(chat_message.from_jid, f.read())
 
         # elif chat_message.body.lower() == 'donate':
@@ -92,7 +92,7 @@ class RageBot(KikClientCallback):
             # self.client.send_chat_message(chat_message.from_jid, "blank")
 
         elif '48 mode' in chat_message.body.lower():
-            with open("48_mode.txt", "r") as f:
+            with open("txt_files/48_mode.txt", "r") as f:
                 self.client.send_chat_message(chat_message.from_jid, f.read())
 
         elif chat_message.from_jid == 'OWNER' and chat_message.body.lower().startswith('alert'): # Not a public feature but it does exist
@@ -113,7 +113,7 @@ class RageBot(KikClientCallback):
         elif chat_message.body.lower() == 'talkers':
 
         elif chat_message.body.lower() == 'usage':
-             with open("usage.txt", "r") as f:
+             with open("txt_files/usage.txt", "r") as f:
                  self.client.send_chat_message(chat_message.group_jid, f.read())
 
     def on_roster_received(self, response: FetchRosterResponse):
