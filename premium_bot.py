@@ -17,6 +17,8 @@ y = ''.join(random.choice(listfn + listfr) for _ in range(16))
 device_id = x
 android_id = y
 
+OWNER = "JID"
+
 username = sys.argv[1] if len(sys.argv) > 1 else input('Username: ')
 password = sys.argv[2] if len(sys.argv) > 2 else input('Password: ')
 
@@ -83,15 +85,19 @@ class RageBot(KikClientCallback):
             with open("rules.txt", "r") as f:
                 self.client.send_chat_message(chat_message.from_jid, f.read())
 
-        #  elif chat_message.body.lower() == 'donate':
-            #  self.client.send_chat_message(chat_message.from_jid, "blank")
+        # elif chat_message.body.lower() == 'donate':
+            # self.client.send_chat_message(chat_message.from_jid, "blank")
 
-        #  elif chat_message.body.lower() == 'donators':
-            #  self.client.send_chat_message(chat_message.from_jid, "blank")
+        # elif chat_message.body.lower() == 'donators':
+            # self.client.send_chat_message(chat_message.from_jid, "blank")
 
         elif '48 mode' in chat_message.body.lower():
             with open("48_mode.txt", "r") as f:
                 self.client.send_chat_message(chat_message.from_jid, f.read())
+
+        elif chat_message.from_jid == 'OWNER' and chat_message.body.lower().startswith('alert'): # Not a public feature but it does exist
+            alert_message = chat_message.body.replace('alert', ' ')
+            self.client.send_chat_message(temp, alert_message) # Add GJIDs for temp, some function probably
 
         else:
             self.client.send_chat_message(chat_message.from_jid, "Say usage for help, say friend to add me to your chat")
