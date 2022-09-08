@@ -56,7 +56,7 @@ class RageBot(KikClientCallback):
                 self.client.send_chat_message(chat_message.from_jid, f.read())
 
         elif chat_message.body.lower() == 'friend':
-            self.client.friend_attribution
+            self.client.add_friend(chat_message.from_jid)
             self.client.send_chat_message(chat_message.from_jid, "I'll be your friend! You can now add me to groups.")
 
         elif chat_message.body.lower() == 'premium usage':
