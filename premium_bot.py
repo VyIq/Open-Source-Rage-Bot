@@ -12,10 +12,10 @@ import requests
 listfr = ['a', 'b', 'c', 'd', 'e', 'f']
 listfn = ['0', '1', '2', '3', '4', '5', '6', '7', '8']
 
-x = ''.join(random.choice(listfn + listfr) for _ in range(32))
-y = ''.join(random.choice(listfn + listfr) for _ in range(16))
-device_id = x
-android_id = y
+x = ''.join(random.choice(listfn + listfr) for _ in range(32)) #  Obsolete
+y = ''.join(random.choice(listfn + listfr) for _ in range(16)) #  Obsolete
+device_id = x #  Obsolete 
+android_id = y #  Obsolete
 
 OWNER = "JID"
 
